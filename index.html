@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sniper Pro | Operation Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0d1117; color: #c9d1d9; }
+        .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; }
+        .status-ready { color: #3fb950; background: rgba(63, 185, 80, 0.1); border: 1px solid rgba(63, 185, 80, 0.3); }
+        .status-watch { color: #58a6ff; background: rgba(88, 166, 255, 0.1); border: 1px solid rgba(88, 166, 255, 0.3); }
+        .pipeline-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+        .step-pass { background-color: #3fb950; box-shadow: 0 0 8px #3fb950; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <header class="max-w-6xl mx-auto flex justify-between items-end mb-10">
+        <div>
+            <h1 class="text-3xl font-extrabold tracking-tight text-white">🎯 Turnaround Sniper <span class="text-blue-500 text-sm font-normal ml-2">Pro v2.1</span></h1>
+            <p class="text-gray-500 mt-2">미국 주식 역발상 전략 운용 패널</p>
+        </div>
+        <div id="last-update" class="text-xs font-mono text-gray-500">
+            SYSTEM LOADING...
+        </div>
+    </header>
+
+    <section class="max-w-6xl mx-auto card p-6 mb-8">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-6">Pipeline Live Status</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div>
+                <span class="block text-2xl font-bold text-white" id="stat-unv">-</span>
+                <span class="text-xs text-gray-500">Universe</span>
+            </div>
+            <div>
+                <span class="block text-2xl font-bold text-blue-400" id="stat-s1">-</span>
+                <span class="text-xs text-gray-500">S1. Drawdown</span>
+            </div>
+            <div>
+                <span class="block text-2xl font-bold text-purple-400" id="stat-s2">-</span>
+                <span class="text-xs text-gray-500">S2. News Filter</span>
+            </div>
+            <div>
+                <span class="block text-2xl font-bold text-green-500" id="stat-s3">-</span>
+                <span class="text-xs text-gray-500">Final Ready</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-6xl mx-auto space-y-6">
+        <div class="flex items-center space-x-2 mb-4">
+            <div class="h-4 w-1 bg-green-500"></div>
+            <h3 class="text-lg font-bold text-white">Operational Candidates</h3>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse card">
+                <thead>
+                    <tr class="text-xs uppercase text-gray-500 border-b border-gray-800">
+                        <th class="p-4">Ticker / Price</th>
+                        <th class="p-4">Evidence (S1-S3)</th>
+                        <th class="p-4">Recovery</th>
+                        <th class="p-4">Context & News</th>
+                    </tr>
+                </thead>
+                <tbody id="candidate-body" class="divide-y divide-gray-800">
+                    </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        // 실제 데이터 연동 로직
+        async function loadDashboard() {
+            try {
+                // GitHub Pages 환경에서는 'data/final_candidates.csv' 등을 직접 읽거나
+                // main.py에서 생성한 'data/data.json'을 읽습니다.
+                const response = await fetch('data/data.json?t=' + Date.now());
+                const data = await response.json();
+
+                // 통계 업데이트
+                document.getElementById('last-update').innerText = `LAST RUN: ${data.metadata.generated_at}`;
+                document.getElementById('stat-unv').innerText = data.metadata.pipeline_stats.universe.toLocaleString();
+                document.getElementById('stat-s1').innerText = data.metadata.pipeline_stats.s1_drawdown.toLocaleString();
+                document.getElementById('stat-s2').innerText = data.metadata.pipeline_stats.s3_news_risk.toLocaleString();
+                document.getElementById('stat-s3').innerText = data.candidates.filter(c => c.evidence.s4_tag === 'READY').length;
+
+                const body = document.getElementById('candidate-body');
+                body.innerHTML = '';
+
+                data.candidates.forEach(stock => {
+                    const tagClass = stock.evidence.s4_tag === 'READY' ? 'status-ready' : 'status-watch';
+                    
+                    const row = `
+                        <tr class="hover:bg-gray-800/50 transition-colors">
+                            <td class="p-4">
+                                <div class="text-lg font-bold text-white">${stock.ticker}</div>
+                                <div class="text-sm text-gray-500">$${stock.price}</div>
+                            </td>
+                            <td class="p-4">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 text-[10px] rounded border border-green-900 text-green-400 bg-green-900/20">S1: DD OK</span>
+                                    <span class="px-2 py-1 text-[10px] rounded border border-blue-900 text-blue-400 bg-blue-900/20">S2: LIQ OK</span>
+                                    <span class="px-2 py-1 text-[10px] rounded border border-purple-900 text-purple-400 bg-purple-900/20">S3: NEWS OK</span>
+                                </div>
+                            </td>
+                            <td class="p-4">
+                                <span class="px-3 py-1 rounded-full text-xs font-bold ${tagClass}">
+                                    ${stock.evidence.s4_tag} (${(stock.metrics.rec_rate * 100).toFixed(1)}%)
+                                </span>
+                            </td>
+                            <td class="p-4 max-w-md">
+                                <p class="text-sm text-gray-400 line-clamp-2">${stock.context}</p>
+                            </td>
+                        </tr>
+                    `;
+                    body.insertAdjacentHTML('beforeend', row);
+                });
+            } catch (err) {
+                console.error("Dashboard Load Failed:", err);
+                document.getElementById('candidate-body').innerHTML = `<tr><td colspan="4" class="p-10 text-center text-gray-500">데이터가 아직 생성되지 않았거나 로딩 중입니다. (파이프라인 실행 확인 필요)</td></tr>`;
+            }
+        }
+
+        loadDashboard();
+    </script>
+</body>
+</html>
