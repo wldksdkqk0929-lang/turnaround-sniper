@@ -1,91 +1,91 @@
 {
     "metadata": {
-        "generated_at": "2026-01-09 15:39:40 KST",
+        "generated_at": "2026-01-09 18:09:28 KST",
         "pipeline_stats": {
             "universe": 5246,
-            "s1_filtered": 73,
-            "s2_checked": 73,
-            "final_ready": 37
+            "s1_filtered": 22,
+            "s2_checked": 22,
+            "final_ready": 12
         },
         "system_logs": [
             "✅ [Step 1] Universe Secured: 5,246 tickers found.",
-            "✅ [Step 2] Technical Scan: 73 candidates survived the drop.",
-            "✅ [Step 3] News Filter: 73 candidates passed risk check.",
+            "✅ [Step 2] Technical Scan: 22 candidates survived the drop.",
+            "✅ [Step 3] News Filter: 22 candidates passed risk check.",
             "🏁 [System] Report generation complete."
         ]
     },
     "candidates": [
         {
             "ticker": "AAON",
-            "price": 80.19,
+            "price": 82.65,
             "metrics": {
-                "drop_rate": -41.58,
-                "rec_rate": 0.09570000000000001
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "AAPG",
-            "price": 28.2,
-            "metrics": {
-                "drop_rate": -41.8,
-                "rec_rate": 0.09300000000000001
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "ACLX",
-            "price": 65.11,
-            "metrics": {
-                "drop_rate": -30.78,
-                "rec_rate": 0.0789
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "ALAB",
-            "price": 158.06,
-            "metrics": {
-                "drop_rate": -39.88,
-                "rec_rate": 0.1282
+                "drop_rate": -39.79,
+                "rec_rate": 0.1293
             },
             "evidence": {
                 "s4_tag": "READY"
             },
-            "context": "No significant news found"
+            "context": "AAON (AAON) Stock Drops: Buying Opportunity Amid Nvidia Chip Con | AAON (NASDAQ:AAON) Shares Down 4.7%"
+        },
+        {
+            "ticker": "AAPG",
+            "price": 28.4,
+            "metrics": {
+                "drop_rate": -41.38,
+                "rec_rate": 0.1008
+            },
+            "evidence": {
+                "s4_tag": "READY"
+            },
+            "context": "Ascentage Pharma Group Internat (AAPG) Stock Analysis: A Biotech Giant with 69.63% Potential Upside | Ascentage Pharma Group International (NASDAQ:AAPG) Shares Gap Up"
+        },
+        {
+            "ticker": "ALAB",
+            "price": 161.79,
+            "metrics": {
+                "drop_rate": -38.46,
+                "rec_rate": 0.1549
+            },
+            "evidence": {
+                "s4_tag": "READY"
+            },
+            "context": "Astera Labs (NASDAQ:ALAB) Stock Price Down 7.5% | ALAB Stock Rallies 20% in One Year: Should You Buy, Hold, or Sell?"
         },
         {
             "ticker": "BSY",
-            "price": 39.82,
+            "price": 40.33,
             "metrics": {
-                "drop_rate": -32.59,
-                "rec_rate": 0.0562
+                "drop_rate": -31.74,
+                "rec_rate": 0.0696
             },
             "evidence": {
                 "s4_tag": "WATCH"
             },
-            "context": "No significant news found"
+            "context": "Bentley Systems Acquires Talon Aerolytics, and Pointivo Technology, for Asset Analytics Leadership | Hawaii hands out 1,000 dash cams so AI can spot road hazards in real time"
         },
         {
             "ticker": "BULL",
-            "price": 8.4,
+            "price": 8.51,
             "metrics": {
-                "drop_rate": -89.45,
-                "rec_rate": 0.09539999999999998
+                "drop_rate": -89.31,
+                "rec_rate": 0.1097
             },
             "evidence": {
-                "s4_tag": "WATCH"
+                "s4_tag": "READY"
             },
-            "context": "No significant news found"
+            "context": "Global Stocks Are Projected to Return 11% in the Next 12 Months | Josh Brown: The bull market in this bank stock is ready to be renewed to start 2026"
+        },
+        {
+            "ticker": "BWIN",
+            "price": 26.27,
+            "metrics": {
+                "drop_rate": -44.28,
+                "rec_rate": 0.1986
+            },
+            "evidence": {
+                "s4_tag": "READY"
+            },
+            "context": "Why Is Baldwin Insurance Group (BWIN) Stock Rocketing Higher Today | Is Baldwin Insurance Group (BWIN) Quietly Rewiring Its Leadership To Elevate Advisory"
         },
         {
             "ticker": "CLSK",
@@ -97,799 +97,187 @@
             "evidence": {
                 "s4_tag": "READY"
             },
-            "context": "No significant news found"
+            "context": "CleanSpark (CLSK) Valuation Check After Recent Share Price Rebound | CleanSpark (CLSK) stock sinks as market gains: Here's why"
         },
         {
             "ticker": "CNXC",
-            "price": 43.29,
+            "price": 44.24,
             "metrics": {
-                "drop_rate": -33.11,
-                "rec_rate": 0.13269999999999998
+                "drop_rate": -31.64,
+                "rec_rate": 0.1575
             },
             "evidence": {
                 "s4_tag": "READY"
             },
-            "context": "No significant news found"
+            "context": "Allspring Global Investments Holdings LLC Invests $9.63 Million in Concentrix Corporation $CNXC | Concentrix Likely To Report Lower Q4 Earnings; These Most Accurate Analysts Revise Forecasts Ahead Of Earnings Call"
         },
         {
             "ticker": "COIN",
-            "price": 238.74,
+            "price": 240.29,
             "metrics": {
-                "drop_rate": -46.31,
-                "rec_rate": 0.0588
+                "drop_rate": -45.96,
+                "rec_rate": 0.0658
             },
             "evidence": {
                 "s4_tag": "WATCH"
             },
-            "context": "No significant news found"
+            "context": "Coinbase (COIN) Stock Is Up, What You Need To Know | Goldman Sachs turns bullish on Coinbase after stock’s 12"
         },
         {
             "ticker": "CORT",
-            "price": 36.4,
+            "price": 36.81,
             "metrics": {
-                "drop_rate": -68.98,
-                "rec_rate": 0.10339999999999999
+                "drop_rate": -68.63,
+                "rec_rate": 0.1158
             },
             "evidence": {
                 "s4_tag": "READY"
             },
-            "context": "No significant news found"
+            "context": "Why Corcept (CORT) Stock Is Trading Lower Today | Corcept Therapeutics: Despite FDA Blind Side, Relacorilant Remains A Viable Drug (NASDAQ:CORT)"
         },
         {
             "ticker": "CPRT",
-            "price": 39.36,
+            "price": 39.94,
             "metrics": {
-                "drop_rate": -38.36,
-                "rec_rate": 0.0521
+                "drop_rate": -37.45,
+                "rec_rate": 0.0675
             },
             "evidence": {
                 "s4_tag": "WATCH"
             },
-            "context": "No significant news found"
+            "context": "Is Copart Stock A Good Value Pick For Your Portfolio? | Copart: Why The Salvage King Still Reigns (NASDAQ:CPRT)"
         },
         {
             "ticker": "CRVL",
-            "price": 71.09,
+            "price": 72.44,
             "metrics": {
-                "drop_rate": -44.72,
-                "rec_rate": 0.0858
+                "drop_rate": -43.67,
+                "rec_rate": 0.1065
             },
             "evidence": {
-                "s4_tag": "WATCH"
+                "s4_tag": "READY"
             },
-            "context": "No significant news found"
+            "context": "Estimating The Intrinsic Value Of CorVel Corporation (NASDAQ:CRVL) | CorVel is Now Oversold (CRVL)"
         },
         {
             "ticker": "CZR",
-            "price": 24.9,
+            "price": 25.0,
             "metrics": {
-                "drop_rate": -37.75,
-                "rec_rate": 0.085
+                "drop_rate": -37.49,
+                "rec_rate": 0.0895
             },
             "evidence": {
                 "s4_tag": "WATCH"
             },
-            "context": "No significant news found"
+            "context": "Caesars Stock (+9%): Digital Profitability Surprise Ignites Re | Assessing Caesars Entertainment (CZR) Valuation After Recent Share Price Moves And Digital Growth Expectations"
         },
         {
             "ticker": "DKNG",
-            "price": 35.86,
+            "price": 35.6,
             "metrics": {
-                "drop_rate": -33.11,
-                "rec_rate": 0.0647
+                "drop_rate": -33.6,
+                "rec_rate": 0.056900000000000006
             },
             "evidence": {
                 "s4_tag": "WATCH"
             },
-            "context": "No significant news found"
+            "context": "DraftKings (DKNG) Beats Stock Market Upswing: What Investors Need to Know | Did DraftKings’ (DKNG) Mindway AI Integration Quietly Reframe Its Responsible Gaming Risk Narrative?"
         },
         {
             "ticker": "ENPH",
-            "price": 35.6,
+            "price": 34.78,
             "metrics": {
-                "drop_rate": -49.7,
-                "rec_rate": 0.1436
+                "drop_rate": -50.86,
+                "rec_rate": 0.1173
             },
             "evidence": {
                 "s4_tag": "READY"
             },
-            "context": "No significant news found"
+            "context": "A Look At Enphase Energy (ENPH) Valuation After KeyBanc Upgrade To Sector Weight | Assessing Enphase Energy (ENPH) Valuation After Recent Share Price Momentum Shift"
         },
         {
             "ticker": "FISV",
-            "price": 69.08,
+            "price": 69.38,
             "metrics": {
-                "drop_rate": -71.05,
-                "rec_rate": 0.0708
+                "drop_rate": -70.92,
+                "rec_rate": 0.0755
             },
             "evidence": {
                 "s4_tag": "WATCH"
             },
-            "context": "No significant news found"
+            "context": "Is Fiserv Stock In Deeply Discounted Territory? | Fiserv Stock: Strong Cash Flow Poised for a Re"
         },
         {
             "ticker": "FIZZ",
-            "price": 32.99,
+            "price": 33.24,
             "metrics": {
-                "drop_rate": -31.11,
-                "rec_rate": 0.057
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "FRHC",
-            "price": 133.91,
-            "metrics": {
-                "drop_rate": -30.98,
-                "rec_rate": 0.1139
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "FRPT",
-            "price": 62.49,
-            "metrics": {
-                "drop_rate": -61.92,
-                "rec_rate": 0.050199999999999995
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "FRSH",
-            "price": 12.23,
-            "metrics": {
-                "drop_rate": -38.14,
-                "rec_rate": 0.0672
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "GLBE",
-            "price": 40.59,
-            "metrics": {
-                "drop_rate": -36.27,
-                "rec_rate": 0.0894
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "GSHD",
-            "price": 75.31,
-            "metrics": {
-                "drop_rate": -41.16,
-                "rec_rate": 0.09140000000000001
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "IPAR",
-            "price": 87.54,
-            "metrics": {
-                "drop_rate": -39.17,
-                "rec_rate": 0.07
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "IRDM",
-            "price": 19.05,
-            "metrics": {
-                "drop_rate": -43.23,
-                "rec_rate": 0.1686
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "ITRI",
-            "price": 99.15,
-            "metrics": {
-                "drop_rate": -30.18,
-                "rec_rate": 0.0697
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "KC",
-            "price": 11.09,
-            "metrics": {
-                "drop_rate": -50.18,
-                "rec_rate": 0.07769999999999999
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "LCID",
-            "price": 11.3,
-            "metrics": {
-                "drop_rate": -68.52,
-                "rec_rate": 0.081
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "LEGN",
-            "price": 23.89,
-            "metrics": {
-                "drop_rate": -47.27,
-                "rec_rate": 0.1818
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "LIF",
-            "price": 64.86,
-            "metrics": {
-                "drop_rate": -42.37,
-                "rec_rate": 0.1094
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "LINE",
-            "price": 36.19,
-            "metrics": {
-                "drop_rate": -38.95,
-                "rec_rate": 0.09119999999999999
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "LNTH",
-            "price": 66.9,
-            "metrics": {
-                "drop_rate": -39.88,
-                "rec_rate": 0.09300000000000001
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "LULU",
-            "price": 205.88,
-            "metrics": {
-                "drop_rate": -51.37,
-                "rec_rate": 0.131
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "MANH",
-            "price": 175.43,
-            "metrics": {
-                "drop_rate": -41.38,
-                "rec_rate": 0.0681
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "MARA",
-            "price": 10.34,
-            "metrics": {
-                "drop_rate": -55.92,
-                "rec_rate": 0.1549
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "MBLY",
-            "price": 11.29,
-            "metrics": {
-                "drop_rate": -44.05,
-                "rec_rate": 0.1245
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "MGNI",
-            "price": 16.4,
-            "metrics": {
-                "drop_rate": -38.46,
+                "drop_rate": -30.6,
                 "rec_rate": 0.0649
             },
             "evidence": {
                 "s4_tag": "WATCH"
             },
-            "context": "No significant news found"
+            "context": "Stock Show Parade Today! | Tracy and Fizz's Big Dumb Post Show | Why FIZZ stock remains on buy lists"
         },
         {
-            "ticker": "MMYT",
-            "price": 80.14,
+            "ticker": "FRHC",
+            "price": 134.17,
             "metrics": {
-                "drop_rate": -33.62,
-                "rec_rate": 0.055
+                "drop_rate": -30.84,
+                "rec_rate": 0.11599999999999999
+            },
+            "evidence": {
+                "s4_tag": "READY"
+            },
+            "context": "Published on: 2026 | CEO Change: What MACD trends signal for namR Socit anonyme 8GQ stock"
+        },
+        {
+            "ticker": "FRPT",
+            "price": 63.19,
+            "metrics": {
+                "drop_rate": -61.49,
+                "rec_rate": 0.062
             },
             "evidence": {
                 "s4_tag": "WATCH"
             },
-            "context": "No significant news found"
+            "context": "Are Strong Financial Prospects The Force That Is Driving The Momentum In Freshpet, Inc.'s NASDAQ:FRPT) Stock? | Freshpet (FRPT) Valuation Check After Recent Share Pullback And Mixed Return Track Record"
         },
         {
-            "ticker": "MQ",
-            "price": 4.78,
-            "metrics": {
-                "drop_rate": -32.17,
-                "rec_rate": 0.0978
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "MSTR",
-            "price": 158.34,
-            "metrics": {
-                "drop_rate": -65.37,
-                "rec_rate": 0.0574
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "NICE",
-            "price": 117.42,
-            "metrics": {
-                "drop_rate": -34.99,
-                "rec_rate": 0.128
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "NSIT",
-            "price": 85.73,
-            "metrics": {
-                "drop_rate": -52.87,
-                "rec_rate": 0.1119
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "NTNX",
-            "price": 53.7,
-            "metrics": {
-                "drop_rate": -35.58,
-                "rec_rate": 0.1447
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "PCTY",
-            "price": 150.18,
-            "metrics": {
-                "drop_rate": -32.9,
-                "rec_rate": 0.0542
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "PCVX",
-            "price": 47.54,
-            "metrics": {
-                "drop_rate": -49.3,
-                "rec_rate": 0.12119999999999999
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "PENN",
-            "price": 14.26,
-            "metrics": {
-                "drop_rate": -38.21,
-                "rec_rate": 0.0706
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "PLUG",
-            "price": 2.21,
-            "metrics": {
-                "drop_rate": -51.75,
-                "rec_rate": 0.151
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "POOL",
-            "price": 246.75,
-            "metrics": {
-                "drop_rate": -33.07,
-                "rec_rate": 0.0913
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "POWI",
-            "price": 41.33,
-            "metrics": {
-                "drop_rate": -38.27,
-                "rec_rate": 0.1736
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "PTON",
-            "price": 6.88,
-            "metrics": {
-                "drop_rate": -32.88,
-                "rec_rate": 0.1543
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "QS",
-            "price": 10.97,
-            "metrics": {
-                "drop_rate": -42.48,
-                "rec_rate": 0.0661
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "RELY",
-            "price": 13.66,
-            "metrics": {
-                "drop_rate": -49.98,
-                "rec_rate": 0.050300000000000004
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "RNW",
-            "price": 5.52,
-            "metrics": {
-                "drop_rate": -33.01,
-                "rec_rate": 0.0942
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "RUM",
-            "price": 6.89,
-            "metrics": {
-                "drop_rate": -51.48,
-                "rec_rate": 0.11230000000000001
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "RXRX",
-            "price": 4.74,
-            "metrics": {
-                "drop_rate": -61.65,
-                "rec_rate": 0.1704
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "SAIA",
-            "price": 367.1,
-            "metrics": {
-                "drop_rate": -31.77,
-                "rec_rate": 0.1612
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "SMMT",
-            "price": 19.55,
-            "metrics": {
-                "drop_rate": -47.05,
-                "rec_rate": 0.1586
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "SMPL",
-            "price": 21.12,
-            "metrics": {
-                "drop_rate": -47.2,
-                "rec_rate": 0.1382
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "SPSC",
-            "price": 93.62,
-            "metrics": {
-                "drop_rate": -52.62,
-                "rec_rate": 0.10300000000000001
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "SRPT",
-            "price": 23.42,
-            "metrics": {
-                "drop_rate": -81.81,
-                "rec_rate": 0.1629
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "TEM",
-            "price": 68.0,
-            "metrics": {
-                "drop_rate": -34.82,
-                "rec_rate": 0.1565
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "TGTX",
-            "price": 30.34,
-            "metrics": {
-                "drop_rate": -34.72,
-                "rec_rate": 0.0529
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "TMC",
-            "price": 7.19,
-            "metrics": {
-                "drop_rate": -36.61,
-                "rec_rate": 0.1794
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "TWST",
-            "price": 35.76,
-            "metrics": {
-                "drop_rate": -35.37,
-                "rec_rate": 0.1837
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "UPST",
-            "price": 50.04,
-            "metrics": {
-                "drop_rate": -48.11,
-                "rec_rate": 0.16210000000000002
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "VCEL",
-            "price": 40.3,
-            "metrics": {
-                "drop_rate": -36.03,
-                "rec_rate": 0.15839999999999999
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "VERX",
-            "price": 19.94,
-            "metrics": {
-                "drop_rate": -67.15,
-                "rec_rate": 0.0536
-            },
-            "evidence": {
-                "s4_tag": "WATCH"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "VRNS",
-            "price": 35.4,
-            "metrics": {
-                "drop_rate": -44.6,
-                "rec_rate": 0.1346
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "WING",
-            "price": 268.08,
-            "metrics": {
-                "drop_rate": -30.78,
-                "rec_rate": 0.1593
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "WRD",
-            "price": 9.55,
-            "metrics": {
-                "drop_rate": -78.31,
-                "rec_rate": 0.1598
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "WSC",
-            "price": 21.48,
-            "metrics": {
-                "drop_rate": -45.15,
-                "rec_rate": 0.1751
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "XRAY",
+            "ticker": "FRSH",
             "price": 12.23,
             "metrics": {
-                "drop_rate": -37.73,
-                "rec_rate": 0.12480000000000001
-            },
-            "evidence": {
-                "s4_tag": "READY"
-            },
-            "context": "No significant news found"
-        },
-        {
-            "ticker": "ZBRA",
-            "price": 255.07,
-            "metrics": {
-                "drop_rate": -40.37,
-                "rec_rate": 0.054900000000000004
+                "drop_rate": -38.16,
+                "rec_rate": 0.0668
             },
             "evidence": {
                 "s4_tag": "WATCH"
             },
-            "context": "No significant news found"
+            "context": "Is Freshworks (FRSH) Attractive After Recent Share Price Weakness And Cash Flow Outlook? | Freshworks (FRSH) Stock Is Up, What You Need To Know"
         },
         {
-            "ticker": "ZLAB",
-            "price": 19.11,
+            "ticker": "GLBE",
+            "price": 41.17,
             "metrics": {
-                "drop_rate": -56.89,
-                "rec_rate": 0.1364
+                "drop_rate": -35.36,
+                "rec_rate": 0.10490000000000001
             },
             "evidence": {
                 "s4_tag": "READY"
             },
-            "context": "No significant news found"
+            "context": "1 Small | Is Now An Opportune Moment To Examine Global"
+        },
+        {
+            "ticker": "GSHD",
+            "price": 75.65,
+            "metrics": {
+                "drop_rate": -40.89,
+                "rec_rate": 0.0964
+            },
+            "evidence": {
+                "s4_tag": "WATCH"
+            },
+            "context": "What Makes GooseHead Insurance (GSHD) Attractive | JPMorgan Chase & Co. Has Lowered Expectations for Goosehead Insurance (NASDAQ:GSHD) Stock Price"
         }
     ]
 }
