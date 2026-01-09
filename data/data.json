@@ -1,26 +1,26 @@
 {
     "metadata": {
-        "generated_at": "2026-01-09 18:09:28 KST",
+        "generated_at": "2026-01-09 21:46:20 KST",
         "pipeline_stats": {
             "universe": 5246,
-            "s1_filtered": 22,
-            "s2_checked": 22,
-            "final_ready": 12
+            "s1_filtered": 25,
+            "s2_checked": 25,
+            "final_ready": 11
         },
         "system_logs": [
             "✅ [Step 1] Universe Secured: 5,246 tickers found.",
-            "✅ [Step 2] Technical Scan: 22 candidates survived the drop.",
-            "✅ [Step 3] News Filter: 22 candidates passed risk check.",
+            "✅ [Step 2] Technical Scan: 25 candidates survived the drop.",
+            "✅ [Step 3] News Filter: 25 candidates passed risk check.",
             "🏁 [System] Report generation complete."
         ]
     },
     "candidates": [
         {
             "ticker": "AAON",
-            "price": 82.65,
+            "price": 83.32,
             "metrics": {
-                "drop_rate": -39.79,
-                "rec_rate": 0.1293
+                "drop_rate": -39.3,
+                "rec_rate": 0.1384
             },
             "evidence": {
                 "s4_tag": "READY"
@@ -29,10 +29,10 @@
         },
         {
             "ticker": "AAPG",
-            "price": 28.4,
+            "price": 28.78,
             "metrics": {
-                "drop_rate": -41.38,
-                "rec_rate": 0.1008
+                "drop_rate": -40.6,
+                "rec_rate": 0.1155
             },
             "evidence": {
                 "s4_tag": "READY"
@@ -41,10 +41,10 @@
         },
         {
             "ticker": "ALAB",
-            "price": 161.79,
+            "price": 162.61,
             "metrics": {
-                "drop_rate": -38.46,
-                "rec_rate": 0.1549
+                "drop_rate": -38.15,
+                "rec_rate": 0.1607
             },
             "evidence": {
                 "s4_tag": "READY"
@@ -53,10 +53,10 @@
         },
         {
             "ticker": "BSY",
-            "price": 40.33,
+            "price": 40.13,
             "metrics": {
-                "drop_rate": -31.74,
-                "rec_rate": 0.0696
+                "drop_rate": -32.07,
+                "rec_rate": 0.0645
             },
             "evidence": {
                 "s4_tag": "WATCH"
@@ -64,11 +64,23 @@
             "context": "Bentley Systems Acquires Talon Aerolytics, and Pointivo Technology, for Asset Analytics Leadership | Hawaii hands out 1,000 dash cams so AI can spot road hazards in real time"
         },
         {
-            "ticker": "BULL",
-            "price": 8.51,
+            "ticker": "BTDR",
+            "price": 11.51,
             "metrics": {
-                "drop_rate": -89.31,
-                "rec_rate": 0.1097
+                "drop_rate": -58.6,
+                "rec_rate": 0.19210000000000002
+            },
+            "evidence": {
+                "s4_tag": "READY"
+            },
+            "context": "BITDEER TECHNOLOGIES GROUP (NASDAQ: BTDR) SHAREHOLDER ALERT | Do Bitdeer Technologies Group’s SEAL04 Lawsuits Recast the Core BTDR Technology Execution Story?"
+        },
+        {
+            "ticker": "BULL",
+            "price": 8.46,
+            "metrics": {
+                "drop_rate": -89.37,
+                "rec_rate": 0.1039
             },
             "evidence": {
                 "s4_tag": "READY"
@@ -77,34 +89,46 @@
         },
         {
             "ticker": "BWIN",
-            "price": 26.27,
+            "price": 26.04,
             "metrics": {
-                "drop_rate": -44.28,
-                "rec_rate": 0.1986
+                "drop_rate": -44.77,
+                "rec_rate": 0.1881
             },
             "evidence": {
                 "s4_tag": "READY"
             },
-            "context": "Why Is Baldwin Insurance Group (BWIN) Stock Rocketing Higher Today | Is Baldwin Insurance Group (BWIN) Quietly Rewiring Its Leadership To Elevate Advisory"
+            "context": "Why Is Baldwin Insurance Group (BWIN) Stock Rocketing Higher Today | Assessing Baldwin Insurance Group (BWIN) Valuation After Recent Rebrand And Share Price Weakness"
+        },
+        {
+            "ticker": "CDW",
+            "price": 133.49,
+            "metrics": {
+                "drop_rate": -39.21,
+                "rec_rate": 0.051699999999999996
+            },
+            "evidence": {
+                "s4_tag": "WATCH"
+            },
+            "context": "Who Owns CDW Corporation? Top Shareholders and Recent Insider Activity | CDW (NASDAQ:CDW) Stock Unloaded Rep. April McClain Delaney"
         },
         {
             "ticker": "CLSK",
-            "price": 11.84,
+            "price": 11.61,
             "metrics": {
-                "drop_rate": -49.85,
-                "rec_rate": 0.1864
+                "drop_rate": -50.83,
+                "rec_rate": 0.16329999999999997
             },
             "evidence": {
                 "s4_tag": "READY"
             },
-            "context": "CleanSpark (CLSK) Valuation Check After Recent Share Price Rebound | CleanSpark (CLSK) stock sinks as market gains: Here's why"
+            "context": "CleanSpark (CLSK) Valuation Check After Recent Share Price Rebound | CleanSpark: 3 Reasons To Buy The Dip Now (NASDAQ:CLSK)"
         },
         {
             "ticker": "CNXC",
-            "price": 44.24,
+            "price": 44.06,
             "metrics": {
-                "drop_rate": -31.64,
-                "rec_rate": 0.1575
+                "drop_rate": -31.92,
+                "rec_rate": 0.1528
             },
             "evidence": {
                 "s4_tag": "READY"
@@ -113,22 +137,22 @@
         },
         {
             "ticker": "COIN",
-            "price": 240.29,
+            "price": 240.78,
             "metrics": {
-                "drop_rate": -45.96,
-                "rec_rate": 0.0658
+                "drop_rate": -45.85,
+                "rec_rate": 0.0679
             },
             "evidence": {
                 "s4_tag": "WATCH"
             },
-            "context": "Coinbase (COIN) Stock Is Up, What You Need To Know | Goldman Sachs turns bullish on Coinbase after stock’s 12"
+            "context": "Coinbase Chart Flashes Death Cross; Is Coin Stock A Buy Now? | Coinbase Global, Inc. (COIN) Stock Drops Despite Market Gains: Important Facts to Note"
         },
         {
             "ticker": "CORT",
-            "price": 36.81,
+            "price": 37.5,
             "metrics": {
-                "drop_rate": -68.63,
-                "rec_rate": 0.1158
+                "drop_rate": -68.04,
+                "rec_rate": 0.1367
             },
             "evidence": {
                 "s4_tag": "READY"
@@ -137,10 +161,10 @@
         },
         {
             "ticker": "CPRT",
-            "price": 39.94,
+            "price": 39.83,
             "metrics": {
-                "drop_rate": -37.45,
-                "rec_rate": 0.0675
+                "drop_rate": -37.62,
+                "rec_rate": 0.0647
             },
             "evidence": {
                 "s4_tag": "WATCH"
@@ -149,22 +173,34 @@
         },
         {
             "ticker": "CRVL",
-            "price": 72.44,
+            "price": 71.42,
             "metrics": {
-                "drop_rate": -43.67,
-                "rec_rate": 0.1065
+                "drop_rate": -44.47,
+                "rec_rate": 0.0909
             },
             "evidence": {
-                "s4_tag": "READY"
+                "s4_tag": "WATCH"
             },
-            "context": "Estimating The Intrinsic Value Of CorVel Corporation (NASDAQ:CRVL) | CorVel is Now Oversold (CRVL)"
+            "context": "Estimating The Intrinsic Value Of CorVel Corporation (NASDAQ:CRVL) | Will CRVL stock see insider buying"
+        },
+        {
+            "ticker": "CVLT",
+            "price": 124.17,
+            "metrics": {
+                "drop_rate": -38.13,
+                "rec_rate": 0.052300000000000006
+            },
+            "evidence": {
+                "s4_tag": "WATCH"
+            },
+            "context": "Commvault Systems (CVLT) Ascends While Market Falls: Some Facts to Note | Commvault Systems (NASDAQ:CVLT) Seems To Use Debt Rather Sparingly"
         },
         {
             "ticker": "CZR",
-            "price": 25.0,
+            "price": 24.63,
             "metrics": {
-                "drop_rate": -37.49,
-                "rec_rate": 0.0895
+                "drop_rate": -38.43,
+                "rec_rate": 0.0732
             },
             "evidence": {
                 "s4_tag": "WATCH"
@@ -172,23 +208,23 @@
             "context": "Caesars Stock (+9%): Digital Profitability Surprise Ignites Re | Assessing Caesars Entertainment (CZR) Valuation After Recent Share Price Moves And Digital Growth Expectations"
         },
         {
-            "ticker": "DKNG",
-            "price": 35.6,
+            "ticker": "DOCU",
+            "price": 68.81,
             "metrics": {
-                "drop_rate": -33.6,
-                "rec_rate": 0.056900000000000006
+                "drop_rate": -30.7,
+                "rec_rate": 0.07429999999999999
             },
             "evidence": {
                 "s4_tag": "WATCH"
             },
-            "context": "DraftKings (DKNG) Beats Stock Market Upswing: What Investors Need to Know | Did DraftKings’ (DKNG) Mindway AI Integration Quietly Reframe Its Responsible Gaming Risk Narrative?"
+            "context": "Docusign: We Should See Growth Acceleration Soon (NASDAQ:DOCU) | DocuSign, Inc.'s (NASDAQ:DOCU) latest 6.7% decline adds to one"
         },
         {
             "ticker": "ENPH",
-            "price": 34.78,
+            "price": 35.22,
             "metrics": {
-                "drop_rate": -50.86,
-                "rec_rate": 0.1173
+                "drop_rate": -50.24,
+                "rec_rate": 0.13140000000000002
             },
             "evidence": {
                 "s4_tag": "READY"
@@ -197,10 +233,10 @@
         },
         {
             "ticker": "FISV",
-            "price": 69.38,
+            "price": 69.85,
             "metrics": {
-                "drop_rate": -70.92,
-                "rec_rate": 0.0755
+                "drop_rate": -70.72,
+                "rec_rate": 0.0828
             },
             "evidence": {
                 "s4_tag": "WATCH"
@@ -209,34 +245,34 @@
         },
         {
             "ticker": "FIZZ",
-            "price": 33.24,
+            "price": 33.1,
             "metrics": {
-                "drop_rate": -30.6,
-                "rec_rate": 0.0649
+                "drop_rate": -30.88,
+                "rec_rate": 0.060599999999999994
             },
             "evidence": {
                 "s4_tag": "WATCH"
             },
-            "context": "Stock Show Parade Today! | Tracy and Fizz's Big Dumb Post Show | Why FIZZ stock remains on buy lists"
+            "context": "Uncomfortable Stock Show Parade Moment! | Tracy and Fizz's Big Dumb Post Show | Why FIZZ stock remains on buy lists"
         },
         {
             "ticker": "FRHC",
-            "price": 134.17,
+            "price": 131.0,
             "metrics": {
-                "drop_rate": -30.84,
-                "rec_rate": 0.11599999999999999
+                "drop_rate": -32.48,
+                "rec_rate": 0.0897
             },
             "evidence": {
-                "s4_tag": "READY"
+                "s4_tag": "WATCH"
             },
             "context": "Published on: 2026 | CEO Change: What MACD trends signal for namR Socit anonyme 8GQ stock"
         },
         {
             "ticker": "FRPT",
-            "price": 63.19,
+            "price": 64.06,
             "metrics": {
-                "drop_rate": -61.49,
-                "rec_rate": 0.062
+                "drop_rate": -60.96,
+                "rec_rate": 0.0766
             },
             "evidence": {
                 "s4_tag": "WATCH"
@@ -245,22 +281,22 @@
         },
         {
             "ticker": "FRSH",
-            "price": 12.23,
+            "price": 12.24,
             "metrics": {
-                "drop_rate": -38.16,
-                "rec_rate": 0.0668
+                "drop_rate": -38.09,
+                "rec_rate": 0.0681
             },
             "evidence": {
                 "s4_tag": "WATCH"
             },
-            "context": "Is Freshworks (FRSH) Attractive After Recent Share Price Weakness And Cash Flow Outlook? | Freshworks (FRSH) Stock Is Up, What You Need To Know"
+            "context": "Freshworks (FRSH) Stock Is Up, What You Need To Know | AI"
         },
         {
             "ticker": "GLBE",
-            "price": 41.17,
+            "price": 41.59,
             "metrics": {
-                "drop_rate": -35.36,
-                "rec_rate": 0.10490000000000001
+                "drop_rate": -34.7,
+                "rec_rate": 0.1162
             },
             "evidence": {
                 "s4_tag": "READY"
@@ -269,10 +305,10 @@
         },
         {
             "ticker": "GSHD",
-            "price": 75.65,
+            "price": 74.88,
             "metrics": {
-                "drop_rate": -40.89,
-                "rec_rate": 0.0964
+                "drop_rate": -41.5,
+                "rec_rate": 0.0852
             },
             "evidence": {
                 "s4_tag": "WATCH"
