@@ -11,19 +11,18 @@
         .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; }
         .status-ready { color: #3fb950; background: rgba(63, 185, 80, 0.1); border: 1px solid rgba(63, 185, 80, 0.3); }
         .status-watch { color: #58a6ff; background: rgba(88, 166, 255, 0.1); border: 1px solid rgba(88, 166, 255, 0.3); }
-        .pipeline-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 6px; }
-        .step-pass { background-color: #3fb950; box-shadow: 0 0 8px #3fb950; }
+        .log-box { background: #010409; border: 1px solid #30363d; font-family: 'Courier New', monospace; }
     </style>
 </head>
 <body class="p-4 md:p-8">
 
     <header class="max-w-6xl mx-auto flex justify-between items-end mb-10">
         <div>
-            <h1 class="text-3xl font-extrabold tracking-tight text-white">🎯 Turnaround Sniper <span class="text-blue-500 text-sm font-normal ml-2">Pro v2.1</span></h1>
+            <h1 class="text-3xl font-extrabold tracking-tight text-white">🎯 Turnaround Sniper <span class="text-blue-500 text-sm font-normal ml-2">Pro v2.2</span></h1>
             <p class="text-gray-500 mt-2">미국 주식 역발상 전략 운용 패널</p>
         </div>
         <div id="last-update" class="text-xs font-mono text-gray-500">
-            SYSTEM LOADING...
+            CONNECTING TO SERVER...
         </div>
     </header>
 
@@ -49,6 +48,15 @@
         </div>
     </section>
 
+    <section class="max-w-6xl mx-auto mb-8">
+        <div class="card p-4">
+            <h3 class="text-xs font-bold text-gray-400 mb-2">📟 SYSTEM LOGS</h3>
+            <div id="system-logs" class="log-box p-3 text-xs text-green-400 h-32 overflow-y-auto rounded">
+                Scanning system logs...
+            </div>
+        </div>
+    </section>
+
     <main class="max-w-6xl mx-auto space-y-6">
         <div class="flex items-center space-x-2 mb-4">
             <div class="h-4 w-1 bg-green-500"></div>
@@ -60,39 +68,62 @@
                 <thead>
                     <tr class="text-xs uppercase text-gray-500 border-b border-gray-800">
                         <th class="p-4">Ticker / Price</th>
-                        <th class="p-4">Evidence (S1-S3)</th>
-                        <th class="p-4">Recovery</th>
+                        <th class="p-4">Strategy</th>
+                        <th class="p-4">Tag</th>
                         <th class="p-4">Context & News</th>
                     </tr>
                 </thead>
                 <tbody id="candidate-body" class="divide-y divide-gray-800">
-                    </tbody>
+                    <tr><td colspan="4" class="p-8 text-center text-gray-600">데이터 로딩 중...</td></tr>
+                </tbody>
             </table>
         </div>
     </main>
 
     <script>
-        // 실제 데이터 연동 로직
         async function loadDashboard() {
             try {
-                // GitHub Pages 환경에서는 'data/final_candidates.csv' 등을 직접 읽거나
-                // main.py에서 생성한 'data/data.json'을 읽습니다.
+                // 데이터 캐싱 방지를 위해 timestamp 추가
                 const response = await fetch('data/data.json?t=' + Date.now());
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
                 const data = await response.json();
 
-                // 통계 업데이트
+                // 1. 통계 업데이트
                 document.getElementById('last-update').innerText = `LAST RUN: ${data.metadata.generated_at}`;
                 document.getElementById('stat-unv').innerText = data.metadata.pipeline_stats.universe.toLocaleString();
-                document.getElementById('stat-s1').innerText = data.metadata.pipeline_stats.s1_drawdown.toLocaleString();
-                document.getElementById('stat-s2').innerText = data.metadata.pipeline_stats.s3_news_risk.toLocaleString();
-                document.getElementById('stat-s3').innerText = data.candidates.filter(c => c.evidence.s4_tag === 'READY').length;
+                document.getElementById('stat-s1').innerText = data.metadata.pipeline_stats.s1_filtered.toLocaleString();
+                document.getElementById('stat-s2').innerText = data.metadata.pipeline_stats.s2_checked.toLocaleString();
+                document.getElementById('stat-s3').innerText = data.metadata.pipeline_stats.final_ready.toLocaleString();
 
+                // 2. 로그 업데이트 (NEW)
+                const logBox = document.getElementById('system-logs');
+                if (data.metadata.system_logs && data.metadata.system_logs.length > 0) {
+                    logBox.innerHTML = data.metadata.system_logs.map(log => `<div>> ${log}</div>`).join('');
+                } else {
+                    logBox.innerHTML = '<div class="text-gray-500">No logs available.</div>';
+                }
+
+                // 3. 테이블 업데이트
                 const body = document.getElementById('candidate-body');
                 body.innerHTML = '';
 
+                if (data.candidates.length === 0) {
+                    body.innerHTML = `<tr><td colspan="4" class="p-10 text-center text-gray-500">
+                        현재 조건에 맞는 종목이 없습니다.<br>
+                        <span class="text-xs text-gray-600">위 로그를 확인하여 오류 여부를 점검하세요.</span>
+                    </td></tr>`;
+                    return;
+                }
+
                 data.candidates.forEach(stock => {
                     const tagClass = stock.evidence.s4_tag === 'READY' ? 'status-ready' : 'status-watch';
-                    
+                    const recRate = (stock.metrics.rec_rate * 100).toFixed(1);
+                    const dropRate = stock.metrics.drop_rate.toFixed(1);
+
                     const row = `
                         <tr class="hover:bg-gray-800/50 transition-colors">
                             <td class="p-4">
@@ -100,15 +131,12 @@
                                 <div class="text-sm text-gray-500">$${stock.price}</div>
                             </td>
                             <td class="p-4">
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-2 py-1 text-[10px] rounded border border-green-900 text-green-400 bg-green-900/20">S1: DD OK</span>
-                                    <span class="px-2 py-1 text-[10px] rounded border border-blue-900 text-blue-400 bg-blue-900/20">S2: LIQ OK</span>
-                                    <span class="px-2 py-1 text-[10px] rounded border border-purple-900 text-purple-400 bg-purple-900/20">S3: NEWS OK</span>
-                                </div>
+                                <div class="text-xs text-gray-400">Drop: <span class="text-red-400">${dropRate}%</span></div>
+                                <div class="text-xs text-gray-400">Recv: <span class="text-green-400">+${recRate}%</span></div>
                             </td>
                             <td class="p-4">
                                 <span class="px-3 py-1 rounded-full text-xs font-bold ${tagClass}">
-                                    ${stock.evidence.s4_tag} (${(stock.metrics.rec_rate * 100).toFixed(1)}%)
+                                    ${stock.evidence.s4_tag}
                                 </span>
                             </td>
                             <td class="p-4 max-w-md">
@@ -118,9 +146,11 @@
                     `;
                     body.insertAdjacentHTML('beforeend', row);
                 });
+
             } catch (err) {
                 console.error("Dashboard Load Failed:", err);
-                document.getElementById('candidate-body').innerHTML = `<tr><td colspan="4" class="p-10 text-center text-gray-500">데이터가 아직 생성되지 않았거나 로딩 중입니다. (파이프라인 실행 확인 필요)</td></tr>`;
+                document.getElementById('system-logs').innerHTML = `<div class="text-red-500">CRITICAL ERROR: Failed to load data.json<br>${err.message}</div>`;
+                document.getElementById('candidate-body').innerHTML = `<tr><td colspan="4" class="p-10 text-center text-red-500">데이터 파일(data.json)을 찾을 수 없습니다.<br>Actions 탭에서 파이프라인 실행 여부를 확인하세요.</td></tr>`;
             }
         }
 
