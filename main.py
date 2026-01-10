@@ -5,24 +5,29 @@ import module_c_news as mod_c
 import module_d_writer as mod_d
 
 def main():
-    print("🚀 System Start: Turnaround Sniper (Smart Fix Mode)")
+    print("🚀 System Start: Turnaround Sniper (Precision Filter Mode)")
     
-    # 이미 20분 걸려서 만든 파일이 있다면? 스캔 생략!
-    if os.path.exists("data/candidates_final.csv"):
-        print("⏩ Found existing final data. Skipping Scan & News analysis.")
-        print("🔄 Regenerating JSON only (Fixing Display Errors)...")
+    # [중요] 기존 쓰레기 데이터 삭제 (강제 재실행)
+    if os.path.exists("data/candidates_b.csv"):
+        os.remove("data/candidates_b.csv")
+        print("🗑️ Cleared old data for fresh scan.")
+
+    # 1. 유니버스 구성
+    mod_a.build_universe()
+    
+    # 2. 정밀 스캔 (Module B 수정본 실행)
+    # 이제 $2 미만 잡주와 +200% 가짜 급등주는 걸러집니다.
+    success = mod_b.run_scan() 
+    
+    if success:
+        # 3. 뉴스 분석
+        mod_c.analyze_news(input_path="data/candidates_b.csv", output_path="data/candidates_final.csv")
         
-        # JSON 변환만 다시 실행 (1초 소요)
+        # 4. JSON 변환 (HTML 시각화용)
         mod_d.export_to_json(input_path="data/candidates_final.csv")
-        
+        print("✅ All systems go. Dashboard ready.")
     else:
-        # 파일이 없으면 처음부터 실행 (이건 비상시용)
-        print("⚠️ No data found. Starting full scan (Takes long time)...")
-        mod_a.build_universe()
-        mod_b.run_scan()
-        if os.path.exists("data/candidates_b.csv"):
-            mod_c.analyze_news(input_path="data/candidates_b.csv", output_path="data/candidates_final.csv")
-            mod_d.export_to_json(input_path="data/candidates_final.csv")
+        print("❌ Scan failed or no targets found.")
 
     print("🏁 Pipeline Completed.")
 
