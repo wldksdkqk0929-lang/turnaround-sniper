@@ -3,6 +3,26 @@ import json
 import os
 import datetime
 import numpy as np
+import math
+
+# [보조 함수] 리스트 안에 숨은 NaN을 청소하는 함수
+def clean_history_list(history_str):
+    try:
+        # 문자열을 리스트로 변환
+        if not isinstance(history_str, str): return []
+        data = json.loads(history_str.replace("'", '"'))
+        
+        # 리스트 내부에 NaN이 있는지 검사하고 청소
+        cleaned_data = []
+        for x in data:
+            # 숫자가 아니거나(NaN), 무한대(inf)면 None으로 변경
+            if x is None or (isinstance(x, float) and (math.isnan(x) or math.isinf(x))):
+                cleaned_data.append(None)
+            else:
+                cleaned_data.append(x)
+        return cleaned_data
+    except:
+        return []
 
 def export_to_json(input_path="data/candidates_final.csv", output_path="data/data.json"):
     if not os.path.exists(input_path):
@@ -12,36 +32,37 @@ def export_to_json(input_path="data/candidates_final.csv", output_path="data/dat
     try:
         df = pd.read_csv(input_path)
         
-        # [핵심 수술] NaN(빈 값)을 None(JSON의 null)으로 변환
-        # 이것을 안 하면 브라우저가 멈춥니다.
-        df = df.replace({np.nan: None})
+        # 1차 청소: 데이터프레임 전체의 NaN 제거
+        df = df.where(pd.notnull(df), None)
 
         candidates = []
         for _, row in df.iterrows():
-            # 차트 데이터(history)가 문자열로 되어있으면 리스트로 복구
-            history_raw = row.get('history', '[]')
-            if isinstance(history_raw, str):
+            # 2차 청소: 차트 데이터(history) 정밀 세척
+            history_clean = clean_history_list(row.get('history', '[]'))
+            
+            # 3차 청소: 기본 수치 데이터 안전 처리
+            def get_safe_val(val):
+                if val is None: return 0
                 try:
-                    # 안전하게 파싱 (작은따옴표 문제 해결)
-                    history_data = json.loads(history_raw.replace("'", '"'))
-                except:
-                    history_data = []
-            else:
-                history_data = []
+                    f = float(val)
+                    if math.isnan(f) or math.isinf(f): return 0
+                    return f
+                except: return 0
 
             candidate = {
                 "ticker": row['ticker'],
-                "price": row['price'],
-                "drop_rate": row['drop_rate'],
-                "recovery_rate": row['recovery_rate'],
-                "rsi": row.get('rsi', 0),
-                "high_52w": row.get('high_52w', 0),
-                "low_52w": row.get('low_52w', 0),
-                "history": str(history_data), # 나중에 JS에서 파싱하도록 다시 문자열로
-                "context": row.get('context', 'No news available'),
+                "price": get_safe_val(row['price']),
+                "drop_rate": get_safe_val(row['drop_rate']),
+                "recovery_rate": get_safe_val(row['recovery_rate']),
+                "rsi": get_safe_val(row.get('rsi', 0)),
+                "high_52w": get_safe_val(row.get('high_52w', 0)),
+                "low_52w": get_safe_val(row.get('low_52w', 0)),
+                # 청소된 깨끗한 리스트를 문자열로 저장
+                "history": json.dumps(history_clean), 
+                "context": str(row.get('context', 'No news available')),
                 "evidence": {
-                    "s4_tag": row.get('s4_tag', 'WATCH'),
-                    "analysis_kr": row.get('analysis_kr', '분석 대기 중...')
+                    "s4_tag": str(row.get('s4_tag', 'WATCH')),
+                    "analysis_kr": str(row.get('analysis_kr', '분석 대기 중...'))
                 }
             }
             candidates.append(candidate)
@@ -57,7 +78,7 @@ def export_to_json(input_path="data/candidates_final.csv", output_path="data/dat
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(final_data, f, ensure_ascii=False, indent=4)
             
-        print(f"✅ JSON Export Successful! ({len(candidates)} items)")
+        print(f"✅ JSON Export Successful! ({len(candidates)} items cleaned & saved)")
 
     except Exception as e:
         print(f"❌ JSON Export Failed: {e}")
